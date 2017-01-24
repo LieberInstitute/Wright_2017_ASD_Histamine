@@ -2,9 +2,9 @@
 
 Code for differential expression analysis and gene set enrichment analysis using RNA-seq data
 
-This code executes the analyses presented in the "Increased expression of histamine signaling genes in Autism Spectrum Disorder" manuscript.
+This code executes the analyses presented in the "Altered expression of histamine signaling genes in Autism Spectrum Disorder" manuscript.
 
-Two independent data sets are presented in the manuscript. The gene count files for one of the datasets, from the Lieber Institute for Brain Development (LIBD) will be available on Gene Omnibus. The replication data was obtained from the Geschwind lab at UCLA. The code included here is for the LIBD data only. The Geschwind lab recently published an analysis with their data but they have not yet made their data publicly available. Therefore, the code for the replication analysis will not be shown here until their data is made publicly available.
+Two independent data sets are presented in the manuscript. The gene count files for one of the datasets, from the Lieber Institute for Brain Development (LIBD) will be available on Gene Omnibus. The replication data was obtained from the Geschwind lab at UCLA. The code included here is for the LIBD data only.
 
 FeatureCounts (v1.4.4) was used to count the total number of reads overlapping each gene using the default settings, with paired-end and reverse-stranded counting specified using the Ensembl Build GRCh37.67 gtf file. These counts were merged from both reads of the paired-end sequencing. This was run using a shell script in linux.
 
