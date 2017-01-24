@@ -14,7 +14,7 @@ Code in the `GeneRpkm2.R` file normalizes the aligned/assigned read counts from 
 2. Differential Expression Analysis
 Code `Analysis.R` first filters the gene expression data to only include genes with a mean normalized value > 0.5.
 Then the number of principal components to correct for known and unknown latent confounds is determined using the num.sv "be" method. Next, the influence of diagnosis status on all individual normalized and filtered gene abundance estimates is evaluated using a linear regression analysis covarying for known RNA-seq confounder variables and the principal components.
-Finally, gene set enrichment analysis is performed to determine if genes of interest are differentially expressed collectively as a group.
+Finally, gene set analysis is performed to determine if genes of interest are differentially expressed collectively as a group.
 
 
 This code depends on R and the Bioconductor sva and limma R packages.
