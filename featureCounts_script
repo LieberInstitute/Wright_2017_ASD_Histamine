@@ -1,0 +1,6 @@
+#!/bin/bash
+
+</pathtolistoffiles/subjectfilelist.txt parallel -P4 featureCounts -s 2 -p -t exon -g gene_id -a Homo_sapiens.GRCh37.67_Ensembl_htr2a.gtf -o /pathtogenecountoutput/GeneCounts_{}.txt /pathtobamfiledirectories/Sample_{}_out/accepted_hits.bam
+
+#Note: This example is written as if the individual subject bam files are in separate folders and uses parallel for running multiple files in parallel.
+#See http://bioinf.wehi.edu.au/subread-package/SubreadUsersGuide.pdf for more information.
