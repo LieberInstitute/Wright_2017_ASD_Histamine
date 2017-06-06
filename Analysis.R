@@ -1,4 +1,4 @@
-load("geneRpkm2.rda")#load the log2(RPKM +1) count data and demographic/technical info for subjects
+load("Wright_ASD_Hist_Data.rda")#load the log2(RPKM +1) count data and demographic/technical info for subjects (also includes RPKM data)
 load("genesets.rda")# load the gene sets of interest
 
 exprsGeneIndex = which(rowMeans(geneRpkm2) > .5) #Threshold for expression
