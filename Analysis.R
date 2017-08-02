@@ -1,16 +1,19 @@
+library(sva)
+library(limma)
+
 load("Wright_ASD_Hist_Data.rda")#load the log2(RPKM +1) count data and demographic/technical info for subjects
 load("genesets.rda")# load the gene sets of interest
 
 exprsGeneIndex = which(rowMeans(geneRpkm2) > .5) #Threshold for expression
 geneRpkm2 = geneRpkm2[exprsGeneIndex,]#filtering out lowly expressed genes
 
-modDx=model.matrix(~pd$Dx +pd$RIN +pd$age +pd$Race +pd$Sex +pd$assignment)#model to pass to num.sv to determine the number of PCs to include in the model-- when explicitly modeling these variables
+modDx=model.matrix(~Pheno$Dx +Pheno$RIN +Pheno$age +Pheno$Race +Pheno$Sex +Pheno$assignment)#model to pass to num.sv to determine the number of PCs to include in the model-- when explicitly modeling these variables
 yGene<-as.matrix(geneRpkm2)#gene counts need to be in a matrix
 k = num.sv(yGene, modDx)#passing our data and model to the num.sv function of the bioconductor package sva to determine the number of PCs sig contributing to overall variance
 PCA<-prcomp(t(yGene))# getting the PCs
 
 #Differential Expression Analysis
-modDx=model.matrix(~pd$Dx +pd$RIN +pd$age +pd$Sex +pd$Race +pd$assignment+PCA$x[,1:k])# model for differential expression analysis
+modDx=model.matrix(~Pheno$Dx +Pheno$RIN +Pheno$age +Pheno$Sex +Pheno$Race +Pheno$assignment+PCA$x[,1:k])# model for differential expression analysis
 fitDx = lmFit(yGene, modDx)#applying the model to the gene expression data
 ebDx = ebayes(fitDx)#applying empirical Bayes method to the fit
 Diag_withCov_out2<- data.frame(log2FC = fitDx$coef[,2], pval = ebDx$p[,2], tstat = ebDx$t[,2])#pulling out the interesting stat results
