@@ -2,7 +2,9 @@
 
 Code for differential expression analysis and gene set enrichment analysis using RNA-seq data
 
-This code executes the analyses presented in the "Altered expression of histamine signaling genes in Autism Spectrum Disorder" manuscript.
+This code executes the analyses presented in the "Altered expression of histamine signaling genes in Autism Spectrum Disorder" manuscript. 
+
+Wright, C et al. “Altered expression of histamine signaling genes in autism spectrum disorder.” Translational psychiatry vol. 7,5 e1126. 9 May. 2017, doi:10.1038/tp.2017.87
 
 Two independent data sets are presented in the manuscript. The gene count files for one of the datasets, from the Lieber Institute for Brain Development (LIBD) is available on Gene Omnibus (Accession: GSE102741). The replication data was obtained from the Geschwind lab at UCLA. The code included here is for the LIBD data only.
 
