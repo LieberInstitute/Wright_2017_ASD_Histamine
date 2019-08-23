@@ -1,4 +1,5 @@
 # Wright_2017_ASD_Histamine
+[![DOI](https://zenodo.org/badge/78884248.svg)](https://zenodo.org/badge/latestdoi/78884248)
 
 Code for differential expression analysis and gene set enrichment analysis using RNA-seq data
 
